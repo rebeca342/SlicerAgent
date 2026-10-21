@@ -1,0 +1,438 @@
+[
+  {
+    "id": 1,
+    "tool": "set_ct_window_preset",
+    "expected_result": "success",
+    "args": {
+      "volume_name": "MRHead",
+      "preset": "bone"
+    },
+    "setup": {
+      "scene": "C:/Users/Usuario/Documents/MASTER IA/TFM/Evaluation/EvaluationScene.mrml"
+    },
+    "validation": {
+      "type": "ct_window",
+      "node": "MRHead",
+      "window": 2000,
+      "level": 300
+    }
+  },
+  {
+    "id": 2,
+    "tool": "set_ct_window_preset",
+    "expected_result": "success",
+    "args": {
+      "volume_name": "CTChest",
+      "preset": "lung"
+    },
+    "setup": {
+      "scene": "C:/Users/Usuario/Documents/MASTER IA/TFM/Evaluation/EvaluationScene.mrml"
+    },
+    "validation": {
+      "type": "ct_window",
+      "node": "CTChest",
+      "window": 1500,
+      "level": -600
+    }
+  },
+  {
+    "id": 3,
+    "tool": "set_ct_window_preset",
+    "expected_result": "success",
+    "args": {
+      "volume_name": "MRHead",
+      "preset": "soft"
+    },
+    "setup": {
+      "scene": "C:/Users/Usuario/Documents/MASTER IA/TFM/Evaluation/EvaluationScene.mrml"
+    },
+    "validation": {
+      "type": "ct_window",
+      "node": "MRHead",
+      "window": 400,
+      "level": 40
+    }
+  },
+  {
+    "id": 4,
+    "tool": "load_demo_volume",
+    "expected_result": "success",
+    "args": {
+      "dataset_name": "DTIBrain"
+    },
+    "setup": {
+      "scene": "C:/Users/Usuario/Documents/MASTER IA/TFM/Evaluation/EvaluationScene.mrml"
+    },
+    "validation": {
+      "type": "node_exists",
+      "class": "vtkMRMLDiffusionTensorVolumeNode",
+      "node": "DTIBrain"
+    }
+  },
+  {
+    "id": 5,
+    "tool": "load_volume_from_file",
+    "expected_result": "success",
+    "args": {
+      "file_path": "C:/Users/Usuario/Documents/MASTER IA/TFM/Evaluation/Files/CTACardio.nrrd",
+      "node_name": "",
+      "show": true,
+      "labelmap": false
+    },
+    "setup": {
+      "scene": "C:/Users/Usuario/Documents/MASTER IA/TFM/Evaluation/EvaluationScene.mrml"
+    },
+    "validation": {
+      "type": "node_exists",
+      "class": "vtkMRMLScalarVolumeNode",
+      "node": "CTACardio"
+    }
+  },
+  {
+    "id": 6,
+    "tool": "load_volume_from_file",
+    "expected_result": "success",
+    "args": {
+      "file_path": "C:/Users/Usuario/Documents/MASTER IA/TFM/Evaluation/Files/CTACardio.nrrd",
+      "node_name": "CardioVolume",
+      "show": true,
+      "labelmap": false
+    },
+    "setup": {
+      "scene": "C:/Users/Usuario/Documents/MASTER IA/TFM/Evaluation/EvaluationScene.mrml"
+    },
+    "validation": {
+      "type": "node_exists",
+      "class": "vtkMRMLScalarVolumeNode",
+      "node": "CardioVolume"
+    }
+  },
+  {
+    "id": 7,
+    "tool": "load_segmentation_from_file",
+    "expected_result": "success",
+    "args": {
+      "file_path": "C:/Users/Usuario/Documents/MASTER IA/TFM/Evaluation/Files/Liver.seg.nrrd",
+      "color_table_path": ""
+    },
+    "setup": {
+      "scene": "C:/Users/Usuario/Documents/MASTER IA/TFM/Evaluation/EvaluationScene.mrml"
+    },
+    "validation": {
+      "type": "node_exists",
+      "class": "vtkMRMLSegmentationNode",
+      "node": "Liver"
+    }
+  },
+  {
+  "id": 8,
+  "tool": "load_segmentation_from_file",
+  "expected_result": "success",
+  "args": {
+    "file_path": "C:/Users/Usuario/Documents/MASTER IA/TFM/Evaluation/Files/Liver.seg.nrrd",
+    "color_table_path": "C:/Users/Usuario/Documents/MASTER IA/TFM/Evaluation/Files/TestColors.ctbl"
+  },
+  "setup": {
+    "scene": "C:/Users/Usuario/Documents/MASTER IA/TFM/Evaluation/EvaluationScene.mrml"
+  },
+  "validation": {
+    "type": "node_exists",
+    "class": "vtkMRMLSegmentationNode",
+    "node": "Liver"
+  }
+  },
+  {
+    "id": 9,
+    "tool": "show_segmentation_in_3d",
+    "expected_result": "success",
+    "args": {
+      "segmentation_name": "TestSegmentation"
+    },
+    "setup": {
+      "scene": "C:/Users/Usuario/Documents/MASTER IA/TFM/Evaluation/EvaluationScene.mrml"
+    },
+    "validation": {
+      "type": "segmentation_3d_visible",
+      "segmentation_name": "Segmentation"
+    }
+  },
+  {
+    "id": 10,
+    "tool": "save_node_to_file",
+    "expected_result": "success",
+    "args": {
+      "node_name": "MRHead",
+      "file_path": "C:/Users/Usuario/Documents/MASTER IA/TFM/Evaluation/Outputs/MRHead_saved.nrrd"
+    },
+    "setup": {
+      "scene": "C:/Users/Usuario/Documents/MASTER IA/TFM/Evaluation/EvaluationScene.mrml"
+    },
+    "validation": {
+      "type": "file_exists",
+      "path": "C:/Users/Usuario/Documents/MASTER IA/TFM/Evaluation/Outputs/MRHead_saved.nrrd"
+    }
+  },
+  {
+    "id": 11,
+    "tool": "save_node_to_file",
+    "expected_result": "success",
+    "args": {
+      "node_name": "TestSegmentation",
+      "file_path": "C:/Users/Usuario/Documents/MASTER IA/TFM/Evaluation/Outputs/TestSegmentation_saved.seg.nrrd"
+    },
+    "setup": {
+      "scene": "C:/Users/Usuario/Documents/MASTER IA/TFM/Evaluation/EvaluationScene.mrml"
+    },
+    "validation": {
+      "type": "file_exists",
+      "path": "C:/Users/Usuario/Documents/MASTER IA/TFM/Evaluation/Outputs/TestSegmentation_saved.seg.nrrd"
+    }
+  },
+  {
+    "id": 12,
+    "tool": "save_node_to_file",
+    "expected_result": "success",
+    "args": {
+      "node_name": "Brain",
+      "file_path": "C:/Users/Usuario/Documents/MASTER IA/TFM/Evaluation/Outputs/Brain_saved.vtk"
+    },
+    "setup": {
+      "scene": "C:/Users/Usuario/Documents/MASTER IA/TFM/Evaluation/EvaluationScene.mrml"
+    },
+    "validation": {
+      "type": "file_exists",
+      "path": "C:/Users/Usuario/Documents/MASTER IA/TFM/Evaluation/Outputs/Brain_saved.vtk"
+    }
+  },
+  {
+    "id": 13,
+    "tool": "save_scene_as_mrb",
+    "expected_result": "success",
+    "args": {
+      "file_path": "C:/Users/Usuario/Documents/MASTER IA/TFM/Evaluation/Outputs/EvaluationScene_saved.mrb"
+    },
+    "setup": {
+      "scene": "C:/Users/Usuario/Documents/MASTER IA/TFM/Evaluation/EvaluationScene.mrml"
+    },
+    "validation": {
+      "type": "scene_saved",
+      "path": "C:/Users/Usuario/Documents/MASTER IA/TFM/Evaluation/Outputs/EvaluationScene_saved.mrb"
+    }
+  },
+  {
+    "id": 14,
+    "tool": "save_scene_as_mrb",
+    "expected_result": "success",
+    "args": {
+      "file_path": "C:/Users/Usuario/Documents/MASTER IA/TFM/Evaluation/Outputs"
+    },
+    "setup": {
+      "scene": "C:/Users/Usuario/Documents/MASTER IA/TFM/Evaluation/EvaluationScene.mrml"
+    },
+    "validation": {
+      "type": "scene_saved_in_directory",
+      "directory": "C:/Users/Usuario/Documents/MASTER IA/TFM/Evaluation/Outputs"
+    }
+  },
+  {
+    "id": 15,
+    "tool": "save_scene_as_mrb",
+    "expected_result": "success",
+    "args": {
+      "file_path": ""
+    },
+    "setup": {
+      "scene": "C:/Users/Usuario/Documents/MASTER IA/TFM/Evaluation/EvaluationScene.mrml"
+    },
+    "validation": {
+      "type": "scene_saved_in_temp_directory"
+    }
+  },
+  {
+    "id": 16,
+    "tool": "set_ct_window_preset",
+    "expected_result": "error",
+    "args": {
+      "volume_name": "MRHead",
+      "preset": "brain"
+    },
+    "setup": {
+      "scene": "C:/Users/Usuario/Documents/MASTER IA/TFM/Evaluation/EvaluationScene.mrml"
+    },
+    "validation": {
+      "type": "error_message",
+      "contains": "Invalid CT preset"
+    }
+  },
+
+  {
+    "id": 17,
+    "tool": "set_ct_window_preset",
+    "expected_result": "error",
+    "args": {
+      "volume_name": "VolumeDoesNotExist",
+      "preset": "bone"
+    },
+    "setup": {
+      "scene": "C:/Users/Usuario/Documents/MASTER IA/TFM/Evaluation/EvaluationScene.mrml"
+    },
+    "validation": {
+      "type": "error_message",
+      "contains": "ERROR"
+    }
+  },
+
+  {
+    "id": 18,
+    "tool": "load_demo_volume",
+    "expected_result": "error",
+    "args": {
+      "dataset_name": "FakeDataset"
+    },
+    "setup": {
+      "scene": "C:/Users/Usuario/Documents/MASTER IA/TFM/Evaluation/EvaluationScene.mrml"
+    },
+    "validation": {
+      "type": "error_message",
+      "contains": "ERROR"
+    }
+  },
+
+  {
+    "id": 19,
+    "tool": "load_volume_from_file",
+    "expected_result": "error",
+    "args": {
+      "file_path": "C:/Users/Usuario/Documents/MASTER IA/TFM/Evaluation/Files/NotExisting.nrrd",
+      "node_name": "",
+      "show": true,
+      "labelmap": false
+    },
+    "setup": {
+      "scene": "C:/Users/Usuario/Documents/MASTER IA/TFM/Evaluation/EvaluationScene.mrml"
+    },
+    "validation": {
+      "type": "error_message",
+      "contains": "ERROR"
+    }
+  },
+
+  {
+    "id": 20,
+    "tool": "load_volume_from_file",
+    "expected_result": "error",
+    "args": {
+      "file_path": "C:/Users/Usuario/Documents/MASTER IA/TFM/Evaluation/Files/Liver.seg.nrrd",
+      "node_name": "",
+      "show": true,
+      "labelmap": false
+    },
+    "setup": {
+      "scene": "C:/Users/Usuario/Documents/MASTER IA/TFM/Evaluation/EvaluationScene.mrml"
+    },
+    "validation": {
+      "type": "error_message",
+      "contains": "ERROR"
+    }
+  },
+
+  {
+    "id": 21,
+    "tool": "load_segmentation_from_file",
+    "expected_result": "error",
+    "args": {
+      "file_path": "C:/Users/Usuario/Documents/MASTER IA/TFM/Evaluation/Files/NotExisting.seg.nrrd",
+      "color_table_path": ""
+    },
+    "setup": {
+      "scene": "C:/Users/Usuario/Documents/MASTER IA/TFM/Evaluation/EvaluationScene.mrml"
+    },
+    "validation": {
+      "type": "error_message",
+      "contains": "ERROR"
+    }
+  },
+
+  {
+    "id": 23,
+    "tool": "show_segmentation_in_3d",
+    "expected_result": "error",
+    "args": {
+      "segmentation_name": "Fakenohay"
+    },
+    "setup": {
+      "scene": "C:/Users/Usuario/Documents/MASTER IA/TFM/Evaluation/EvaluationScene.mrml"
+    },
+    "validation": {
+      "type": "error_message",
+      "contains": "ERROR"
+    }
+  },
+
+  {
+    "id": 24,
+    "tool": "save_node_to_file",
+    "expected_result": "error",
+    "args": {
+      "node_name": "FakeNode",
+      "file_path": "C:/Users/Usuario/Documents/MASTER IA/TFM/Evaluation/Outputs/Fake.nrrd"
+    },
+    "setup": {
+      "scene": "C:/Users/Usuario/Documents/MASTER IA/TFM/Evaluation/EvaluationScene.mrml"
+    },
+    "validation": {
+      "type": "error_message",
+      "contains": "ERROR"
+    }
+  },
+
+  {
+    "id": 25,
+    "tool": "save_node_to_file",
+    "expected_result": "error",
+    "args": {
+      "node_name": "MRHead",
+      "file_path": ""
+    },
+    "setup": {
+      "scene": "C:/Users/Usuario/Documents/MASTER IA/TFM/Evaluation/EvaluationScene.mrml"
+    },
+    "validation": {
+      "type": "error_message",
+      "contains": "Empty output path"
+    }
+  },
+
+  {
+    "id": 26,
+    "tool": "save_node_to_file",
+    "expected_result": "warning",
+    "args": {
+      "node_name": "MRHead",
+      "file_path": "C:/Users/Usuario/Documents/MASTER IA/TFM/Evaluation/Outputs/file.invalid"
+    },
+    "setup": {
+      "scene": "C:/Users/Usuario/Documents/MASTER IA/TFM/Evaluation/EvaluationScene.mrml"
+    },
+    "validation": {
+      "type": "warning_message",
+      "warning_contains": "Possible unsupported file extension"
+    }
+  },
+
+  {
+    "id": 27,
+    "tool": "save_scene_as_mrb",
+    "expected_result": "error",
+    "args": {
+      "file_path": "C:/Users/Usuario/Documents/MASTER IA/TFM/Evaluation/Outputs/scene.invalid"
+    },
+    "setup": {
+      "scene": "EMPTY_SCENE"
+    },
+    "validation": {
+      "type": "error_message",
+      "contains": "Scene does not contain any user data"
+    }
+  }
+]

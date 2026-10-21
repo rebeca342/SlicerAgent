@@ -1,0 +1,710 @@
+[
+  {
+    "id": 1,
+    "prompt": "Load the sample volume MRHead.",
+    "expected_tool": "load_demo_volume",
+    "expected_args": {
+      "dataset_name": "MRHead"
+    },
+    "category": "easy"
+  },
+  {
+    "id": 2,
+    "prompt": "Load the sample volume CTChest.",
+    "expected_tool": "load_demo_volume",
+    "expected_args": {
+      "dataset_name": "CTChest"
+    },
+    "category": "easy"
+  },
+  {
+    "id": 3,
+    "prompt": "Load the sample volume DTIBrain.",
+    "expected_tool": "load_demo_volume",
+    "expected_args": {
+      "dataset_name": "DTIBrain"
+    },
+    "category": "easy"
+  },
+  {
+    "id": 4,
+    "prompt": "Load the sample volume MRBrainTumor1.",
+    "expected_tool": "load_demo_volume",
+    "expected_args": {
+      "dataset_name": "MRBrainTumor1"
+    },
+    "category": "easy"
+  },
+  {
+    "id": 5,
+    "prompt": "Apply the bone CT window preset to volume CTChest.",
+    "expected_tool": "set_ct_window_preset",
+    "expected_args": {
+      "volume_name": "CTChest",
+      "preset": "bone"
+    },
+    "category": "easy"
+  },
+  {
+    "id": 6,
+    "prompt": "Apply the lung CT window preset to volume CTChest.",
+    "expected_tool": "set_ct_window_preset",
+    "expected_args": {
+      "volume_name": "CTChest",
+      "preset": "lung"
+    },
+    "category": "easy"
+  },
+  {
+    "id": 7,
+    "prompt": "Apply the soft tissue CT window preset to volume CTChest.",
+    "expected_tool": "set_ct_window_preset",
+    "expected_args": {
+      "volume_name": "CTChest",
+      "preset": "soft"
+    },
+    "category": "easy"
+  },
+  {
+    "id": 8,
+    "prompt": "Load the volume from C:/Data/head.nrrd.",
+    "expected_tool": "load_volume_from_file",
+    "expected_args": {
+      "file_path": "C:/Data/head.nrrd",
+      "node_name": "",
+      "show": true,
+      "labelmap": false
+    },
+    "category": "easy"
+  },
+  {
+    "id": 9,
+    "prompt": "Load the volume from C:/Data/lung.nii.gz.",
+    "expected_tool": "load_volume_from_file",
+    "expected_args": {
+      "file_path": "C:/Data/lung.nii.gz",
+      "node_name": "",
+      "show": true,
+      "labelmap": false
+    },
+    "category": "easy"
+  },
+  {
+    "id": 10,
+    "prompt": "Load C:/Data/patient01.mha as volume Patient01.",
+    "expected_tool": "load_volume_from_file",
+    "expected_args": {
+      "file_path": "C:/Data/patient01.mha",
+      "node_name": "Patient01",
+      "show": true,
+      "labelmap": false
+    },
+    "category": "easy"
+  },
+  {
+    "id": 11,
+    "prompt": "Load the segmentation from C:/Data/tumor.seg.nrrd.",
+    "expected_tool": "load_segmentation_from_file",
+    "expected_args": {
+      "file_path": "C:/Data/tumor.seg.nrrd",
+      "color_table_path": ""
+    },
+    "category": "easy"
+  },
+  {
+    "id": 12,
+    "prompt": "Load the segmentation from C:/Data/liver.nii.gz using color table C:/Data/colors.ctbl.",
+    "expected_tool": "load_segmentation_from_file",
+    "expected_args": {
+      "file_path": "C:/Data/liver.nii.gz",
+      "color_table_path": "C:/Data/colors.ctbl"
+    },
+    "category": "easy"
+  },
+  {
+    "id": 13,
+    "prompt": "Show the segmentation LiverSegmentation in 3D.",
+    "expected_tool": "show_segmentation_in_3d",
+    "expected_args": {
+      "segmentation_name": "LiverSegmentation"
+    },
+    "category": "easy"
+  },
+  {
+    "id": 14,
+    "prompt": "Show the segmentation Tumor in 3D.",
+    "expected_tool": "show_segmentation_in_3d",
+    "expected_args": {
+      "segmentation_name": "Tumor"
+    },
+    "category": "easy"
+  },
+  {
+    "id": 15,
+    "prompt": "Save the node CTChest to C:/Exports/CTChest.nrrd.",
+    "expected_tool": "save_node_to_file",
+    "expected_args": {
+      "node_name": "CTChest",
+      "file_path": "C:/Exports/CTChest.nrrd"
+    },
+    "category": "easy"
+  },
+  {
+    "id": 16,
+    "prompt": "Save the node Tumor to C:/Exports/Tumor.seg.nrrd.",
+    "expected_tool": "save_node_to_file",
+    "expected_args": {
+      "node_name": "Tumor",
+      "file_path": "C:/Exports/Tumor.seg.nrrd"
+    },
+    "category": "easy"
+  },
+  {
+    "id": 17,
+    "prompt": "Save the node SkullModel to C:/Exports/Skull.stl.",
+    "expected_tool": "save_node_to_file",
+    "expected_args": {
+      "node_name": "SkullModel",
+      "file_path": "C:/Exports/Skull.stl"
+    },
+    "category": "easy"
+  },
+  {
+    "id": 18,
+    "prompt": "Save the current scene to C:/Projects/BrainStudy.mrb.",
+    "expected_tool": "save_scene_as_mrb",
+    "expected_args": {
+      "file_path": "C:/Projects/BrainStudy.mrb"
+    },
+    "category": "easy"
+  },
+  {
+    "id": 19,
+    "prompt": "Save the current scene to D:/Backup/session.mrb.",
+    "expected_tool": "save_scene_as_mrb",
+    "expected_args": {
+      "file_path": "D:/Backup/session.mrb"
+    },
+    "category": "easy"
+  },
+  {
+    "id": 20,
+    "prompt": "Load the volume from C:/Data/brain.nii.gz as BrainMRI.",
+    "expected_tool": "load_volume_from_file",
+    "expected_args": {
+      "file_path": "C:/Data/brain.nii.gz",
+      "node_name": "BrainMRI",
+      "show": true,
+      "labelmap": false
+    },
+    "category": "easy"
+  },
+  {
+    "id": 21,
+    "prompt": "I'm just getting started with 3D Slicer. Could you load the MRHead sample dataset so I can explore it?",
+    "expected_tool": "load_demo_volume",
+    "expected_args": {
+      "dataset_name": "MRHead"
+    },
+    "category": "natural"
+  },
+  {
+    "id": 22,
+    "prompt": "Before we continue with the tutorial, please open the CTChest sample volume included with Slicer.",
+    "expected_tool": "load_demo_volume",
+    "expected_args": {
+      "dataset_name": "CTChest"
+    },
+    "category": "natural"
+  },
+  {
+    "id": 23,
+    "prompt": "I'd like to experiment with diffusion imaging. Can you download and load the DTIBrain sample dataset?",
+    "expected_tool": "load_demo_volume",
+    "expected_args": {
+      "dataset_name": "DTIBrain"
+    },
+    "category": "natural"
+  },
+  {
+    "id": 24,
+    "prompt": "The CTChest volume is already loaded. Could you switch it to the bone CT window preset so that bone structures are easier to inspect?",
+    "expected_tool": "set_ct_window_preset",
+    "expected_args": {
+      "volume_name": "CTChest",
+      "preset": "bone"
+    },
+    "category": "natural"
+  },
+  {
+    "id": 25,
+    "prompt": "I'm interested in looking at the lungs. Please apply the lung window preset to the volume named CTChest.",
+    "expected_tool": "set_ct_window_preset",
+    "expected_args": {
+      "volume_name": "CTChest",
+      "preset": "lung"
+    },
+    "category": "natural"
+  },
+  {
+    "id": 26,
+    "prompt": "Could you change the display of the volume Patient_CT to the soft tissue CT window preset?",
+    "expected_tool": "set_ct_window_preset",
+    "expected_args": {
+      "volume_name": "Patient_CT",
+      "preset": "soft"
+    },
+    "category": "natural"
+  },
+  {
+    "id": 27,
+    "prompt": "I have a NIfTI scan stored at C:/MedicalData/patient01.nii.gz. Please load it into the current scene.",
+    "expected_tool": "load_volume_from_file",
+    "expected_args": {
+      "file_path": "C:/MedicalData/patient01.nii.gz",
+      "node_name": "",
+      "show": true,
+      "labelmap": false
+    },
+    "category": "natural"
+  },
+  {
+    "id": 28,
+    "prompt": "Please import the volume located at D:/Cases/brain.mha and name it BrainMRI once it's loaded.",
+    "expected_tool": "load_volume_from_file",
+    "expected_args": {
+      "file_path": "D:/Cases/brain.mha",
+      "node_name": "BrainMRI",
+      "show": true,
+      "labelmap": false
+    },
+    "category": "natural"
+  },
+  {
+    "id": 29,
+    "prompt": "I'd like to open the volume stored in C:/Images/head.nrrd. You can keep the default display settings.",
+    "expected_tool": "load_volume_from_file",
+    "expected_args": {
+      "file_path": "C:/Images/head.nrrd",
+      "node_name": "",
+      "show": true,
+      "labelmap": false
+    },
+    "category": "natural"
+  },
+  {
+    "id": 30,
+    "prompt": "Please load the segmentation saved at C:/Segmentations/liver.seg.nrrd into the scene.",
+    "expected_tool": "load_segmentation_from_file",
+    "expected_args": {
+      "file_path": "C:/Segmentations/liver.seg.nrrd",
+      "color_table_path": ""
+    },
+    "category": "natural"
+  },
+  {
+    "id": 31,
+    "prompt": "Could you import the segmentation from D:/Cases/tumor.nii.gz and use the color table located at D:/Cases/colors.ctbl?",
+    "expected_tool": "load_segmentation_from_file",
+    "expected_args": {
+      "file_path": "D:/Cases/tumor.nii.gz",
+      "color_table_path": "D:/Cases/colors.ctbl"
+    },
+    "category": "natural"
+  },
+  {
+    "id": 32,
+    "prompt": "I have a segmentation stored as C:/Models/kidney.stl. Please load it into the current scene.",
+    "expected_tool": "load_segmentation_from_file",
+    "expected_args": {
+      "file_path": "C:/Models/kidney.stl",
+      "color_table_path": ""
+    },
+    "category": "natural"
+  },
+  {
+    "id": 33,
+    "prompt": "The segmentation called LiverSegmentation is already available. Could you display it in the 3D view?",
+    "expected_tool": "show_segmentation_in_3d",
+    "expected_args": {
+      "segmentation_name": "LiverSegmentation"
+    },
+    "category": "natural"
+  },
+  {
+    "id": 34,
+    "prompt": "I'd like to visualize the segmentation named TumorMask in three dimensions. Please make it visible in the 3D view.",
+    "expected_tool": "show_segmentation_in_3d",
+    "expected_args": {
+      "segmentation_name": "TumorMask"
+    },
+    "category": "natural"
+  },
+  {
+    "id": 35,
+    "prompt": "Could you export the node named CTChest as C:/Exports/CTChest.nrrd?",
+    "expected_tool": "save_node_to_file",
+    "expected_args": {
+      "node_name": "CTChest",
+      "file_path": "C:/Exports/CTChest.nrrd"
+    },
+    "category": "natural"
+  },
+  {
+    "id": 36,
+    "prompt": "I'd like to save the segmentation node TumorMask to D:/Results/TumorMask.seg.nrrd.",
+    "expected_tool": "save_node_to_file",
+    "expected_args": {
+      "node_name": "TumorMask",
+      "file_path": "D:/Results/TumorMask.seg.nrrd"
+    },
+    "category": "natural"
+  },
+  {
+    "id": 37,
+    "prompt": "Please export the model node SkullModel as an STL file to C:/Exports/SkullModel.stl.",
+    "expected_tool": "save_node_to_file",
+    "expected_args": {
+      "node_name": "SkullModel",
+      "file_path": "C:/Exports/SkullModel.stl"
+    },
+    "category": "natural"
+  },
+  {
+    "id": 38,
+    "prompt": "I've finished working on this case. Could you save the entire Slicer scene as C:/Projects/LiverStudy.mrb?",
+    "expected_tool": "save_scene_as_mrb",
+    "expected_args": {
+      "file_path": "C:/Projects/LiverStudy.mrb"
+    },
+    "category": "natural"
+  },
+  {
+    "id": 39,
+    "prompt": "Before closing the application, please save the current project to D:/Backups/session_backup.mrb.",
+    "expected_tool": "save_scene_as_mrb",
+    "expected_args": {
+      "file_path": "D:/Backups/session_backup.mrb"
+    },
+    "category": "natural"
+  },
+  {
+    "id": 40,
+    "prompt": "Could you save everything I'm currently working on into the file C:/Research/BrainStudy_Final.mrb so I can continue later?",
+    "expected_tool": "save_scene_as_mrb",
+    "expected_args": {
+      "file_path": "C:/Research/BrainStudy_Final.mrb"
+    },
+    "category": "natural"
+  },
+  {
+    "id": 41,
+    "prompt": "Load the sample dataset.",
+    "expected_tool": "load_demo_volume",
+    "expected_args": {
+      "dataset_name": "MRHead"
+    },
+    "category": "noclear_parameters"
+  },
+  {
+    "id": 42,
+    "prompt": "Please download one of the demo datasets for me.",
+    "expected_tool": "load_demo_volume",
+    "expected_args": {
+      "dataset_name": "MRHead"
+    },
+    "category": "noclear_parameters"
+  },
+  {
+    "id": 43,
+    "prompt": "Apply the bone CT window preset.",
+    "expected_tool": "set_ct_window_preset",
+    "expected_args": {
+      "volume_name": "",
+      "preset": "bone"
+    },
+    "category": "noclear_parameters"
+  },
+  {
+    "id": 44,
+    "prompt": "Switch the current scan to the lung window.",
+    "expected_tool": "set_ct_window_preset",
+    "expected_args": {
+      "volume_name": "",
+      "preset": "lung"
+    },
+    "category": "noclear_parameters"
+  },
+  {
+    "id": 45,
+    "prompt": "Use the soft tissue CT preset.",
+    "expected_tool": "set_ct_window_preset",
+    "expected_args": {
+      "volume_name": "",
+      "preset": "soft"
+    },
+    "category": "noclear_parameters"
+  },
+  {
+    "id": 46,
+    "prompt": "Load this NIfTI file.",
+    "expected_tool": "load_volume_from_file",
+    "expected_args": {
+      "file_path": "",
+      "node_name": "",
+      "show": true,
+      "labelmap": false
+    },
+    "category": "noclear_parameters"
+  },
+  {
+    "id": 47,
+    "prompt": "Open the volume stored on my computer.",
+    "expected_tool": "load_volume_from_file",
+    "expected_args": {
+      "file_path": "",
+      "node_name": "",
+      "show": true,
+      "labelmap": false
+    },
+    "category": "noclear_parameters"
+  },
+  {
+    "id": 48,
+    "prompt": "Import a medical volume and call it Patient01.",
+    "expected_tool": "load_volume_from_file",
+    "expected_args": {
+      "file_path": "",
+      "node_name": "Patient01",
+      "show": true,
+      "labelmap": false
+    },
+    "category": "noclear_parameters"
+  },
+  {
+    "id": 49,
+    "prompt": "Load a segmentation into the scene.",
+    "expected_tool": "load_segmentation_from_file",
+    "expected_args": {
+      "file_path": "",
+      "color_table_path": ""
+    },
+    "category": "noclear_parameters"
+  },
+  {
+    "id": 50,
+    "prompt": "Open the segmentation file and use this color table.",
+    "expected_tool": "load_segmentation_from_file",
+    "expected_args": {
+      "file_path": "",
+      "color_table_path": ""
+    },
+    "category": "noclear_parameters"
+  },
+  {
+    "id": 51,
+    "prompt": "Load the segmentation from C:/Data/liver.seg.nrrd using a color table.",
+    "expected_tool": "load_segmentation_from_file",
+    "expected_args": {
+      "file_path": "C:/Data/liver.seg.nrrd",
+      "color_table_path": ""
+    },
+    "category": "noclear_parameters"
+  },
+  {
+    "id": 52,
+    "prompt": "Show the segmentation in the 3D view.",
+    "expected_tool": "show_segmentation_in_3d",
+    "expected_args": {
+      "segmentation_name": ""
+    },
+    "category": "noclear_parameters"
+  },
+  {
+    "id": 53,
+    "prompt": "Display my segmentation in 3D.",
+    "expected_tool": "show_segmentation_in_3d",
+    "expected_args": {
+      "segmentation_name": ""
+    },
+    "category": "noclear_parameters"
+  },
+  {
+    "id": 54,
+    "prompt": "Save the current segmentation as C:/Results/liver.seg.nrrd.",
+    "expected_tool": "save_node_to_file",
+    "expected_args": {
+      "node_name": "",
+      "file_path": "C:/Results/liver.seg.nrrd"
+    },
+    "category": "noclear_parameters"
+  },
+  {
+    "id": 55,
+    "prompt": "Export the model to C:/Exports/model.stl.",
+    "expected_tool": "save_node_to_file",
+    "expected_args": {
+      "node_name": "",
+      "file_path": "C:/Exports/model.stl"
+    },
+    "category": "noclear_parameters"
+  },
+  {
+    "id": 56,
+    "prompt": "Save this volume as C:/Exports/image.nrrd.",
+    "expected_tool": "save_node_to_file",
+    "expected_args": {
+      "node_name": "",
+      "file_path": "C:/Exports/image.nrrd"
+    },
+    "category": "noclear_parameters"
+  },
+  {
+    "id": 57,
+    "prompt": "Save the node named PatientScan.",
+    "expected_tool": "save_node_to_file",
+    "expected_args": {
+      "node_name": "PatientScan",
+      "file_path": ""
+    },
+    "category": "noclear_parameters"
+  },
+  {
+    "id": 58,
+    "prompt": "Export the segmentation called LiverMask.",
+    "expected_tool": "save_node_to_file",
+    "expected_args": {
+      "node_name": "LiverMask",
+      "file_path": ""
+    },
+    "category": "noclear_parameters"
+  },
+  {
+    "id": 59,
+    "prompt": "Load the volume from C:/Data/head.nii.gz.",
+    "expected_tool": "load_volume_from_file",
+    "expected_args": {
+      "file_path": "C:/Data/head.nii.gz",
+      "node_name": "",
+      "show": true,
+      "labelmap": false
+    },
+    "category": "noclear_parameters"
+  },
+  {
+    "id": 60,
+    "prompt": "Import the segmentation located at D:/Cases/tumor.seg.nrrd.",
+    "expected_tool": "load_segmentation_from_file",
+    "expected_args": {
+      "file_path": "D:/Cases/tumor.seg.nrrd",
+      "color_table_path": ""
+    },
+    "category": "noclear_parameters"
+  },
+  {
+    "id": 61,
+    "prompt": "Can you do something with this scan?",
+    "expected_tool": "request_clarification",
+    "expected_args": {},
+    "category": "noclear_intentions"
+  },
+  {
+    "id": 62,
+    "prompt": "I need some help with my medical image.",
+    "expected_tool": "request_clarification",
+    "expected_args": {},
+    "category": "noclear_intentions"
+  },
+  {
+    "id": 63,
+    "prompt": "Could you prepare this case for me?",
+    "expected_tool": "request_clarification",
+    "expected_args": {},
+    "category": "noclear_intentions"
+  },
+  {
+    "id": 64,
+    "prompt": "I want to work with this patient study.",
+    "expected_tool": "request_clarification",
+    "expected_args": {},
+    "category": "noclear_intentions"
+  },
+  {
+    "id": 65,
+    "prompt": "Can you make this look better?",
+    "expected_tool": "request_clarification",
+    "expected_args": {},
+    "category": "noclear_intentions"
+  },
+  {
+    "id": 66,
+    "prompt": "I'd like to continue working on this.",
+    "expected_tool": "request_clarification",
+    "expected_args": {},
+    "category": "noclear_intentions"
+  },
+  {
+    "id": 67,
+    "prompt": "Can you take care of this for me?",
+    "expected_tool": "request_clarification",
+    "expected_args": {},
+    "category": "noclear_intentions"
+  },
+  {
+    "id": 68,
+    "prompt": "Please perform the next step.",
+    "expected_tool": "request_clarification",
+    "expected_args": {},
+    "category": "noclear_intentions"
+  },
+  {
+    "id": 69,
+    "prompt": "Something doesn't seem right. Can you fix it?",
+    "expected_tool": "request_clarification",
+    "expected_args": {},
+    "category": "noclear_intentions"
+  },
+  {
+    "id": 70,
+    "prompt": "Can you process this image?",
+    "expected_tool": "request_clarification",
+    "expected_args": {},
+    "category": "noclear_intentions"
+  },
+  {
+    "id": 71,
+    "prompt": "Please do whatever is needed.",
+    "expected_tool": "request_clarification",
+    "expected_args": {},
+    "category": "noclear_intentions"
+  },
+  {
+    "id": 72,
+    "prompt": "I'd like to see something different.",
+    "expected_tool": "request_clarification",
+    "expected_args": {},
+    "category": "noclear_intentions"
+  },
+  {
+    "id": 73,
+    "prompt": "Can you improve what I'm looking at?",
+    "expected_tool": "request_clarification",
+    "expected_args": {},
+    "category": "noclear_intentions"
+  },
+  {
+    "id": 74,
+    "prompt": "I don't know what to do next. Can you help?",
+    "expected_tool": "request_clarification",
+    "expected_args": {},
+    "category": "noclear_intentions"
+  },
+  {
+    "id": 75,
+    "prompt": "Can you handle this case for me?",
+    "expected_tool": "request_clarification",
+    "expected_args": {},
+    "category": "noclear_intentions"
+  }
+]
+
